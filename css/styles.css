@@ -280,6 +280,60 @@ section h2 {
   font-weight: 600;
 }
 
+/* 프로젝트 카운트 배지 */
+#projects .project-count {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  margin-top: -24px;
+}
+
+#projects .project-count strong {
+  color: var(--accent);
+  font-size: 1.5rem;
+}
+
+/* 성과 리스트 */
+#projects .achievements {
+  grid-column: 1 / -1;
+  background: var(--text);
+  border-radius: var(--radius);
+  padding: 32px;
+  margin-top: 24px;
+}
+
+#projects .achievements h3 {
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+#projects .achievements ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 32px;
+}
+
+#projects .achievements ul li {
+  position: relative;
+  padding-left: 20px;
+  color: #CBD5E1;
+  font-size: 0.95rem;
+}
+
+#projects .achievements ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+#projects .achievements ul li strong {
+  color: #fff;
+}
+
 /* ===================== SECTION: skills ===================== */
 #skills {
   background: var(--bg);
