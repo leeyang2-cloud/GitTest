@@ -1,0 +1,421 @@
+/* ===================== RESET & BASE ===================== */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --accent: #2563EB;
+  --accent-dark: #1D4ED8;
+  --text: #1E293B;
+  --text-light: #64748B;
+  --bg: #FFFFFF;
+  --bg-alt: #F8FAFC;
+  --border: #E2E8F0;
+
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --max-width: 960px;
+  --section-gap: 80px;
+  --radius: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+/* ===================== UTILITY ===================== */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: var(--section-gap) 0;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ===================== SECTION: hero ===================== */
+#hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  align-items: center;
+  padding: 0 24px;
+}
+
+#hero header nav {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px 0;
+  max-width: var(--max-width);
+  justify-self: center;
+  width: 100%;
+}
+
+#hero > div {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  text-align: center;
+  width: 100%;
+}
+
+#hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+
+#hero blockquote {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 40px;
+  color: var(--text);
+}
+
+#hero blockquote strong {
+  color: var(--accent);
+}
+
+#hero > div > div {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+#hero > div > div a {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+#hero > div > div a:first-child {
+  background: var(--accent);
+  color: #fff;
+}
+
+#hero > div > div a:first-child:hover {
+  background: var(--accent-dark);
+}
+
+#hero > div > div a:last-child {
+  background: var(--border);
+  color: var(--text);
+}
+
+#hero > div > div a:last-child:hover {
+  background: #CBD5E1;
+}
+
+/* ===================== SECTION: impact-strip ===================== */
+#impact-strip {
+  background: var(--text);
+  color: #fff;
+  padding: 48px 0;
+}
+
+#impact-strip .container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+
+#impact-strip span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+#impact-strip p {
+  font-size: 0.9rem;
+  color: #CBD5E1;
+}
+
+/* ===================== SECTION: experience ===================== */
+#experience {
+  background: var(--bg);
+}
+
+#experience .timeline {
+  max-width: 720px;
+  margin: 0 auto;
+  position: relative;
+  padding-left: 32px;
+}
+
+#experience .timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--border);
+}
+
+#experience .timeline > div {
+  margin-bottom: 48px;
+  position: relative;
+}
+
+#experience .timeline > div::before {
+  content: '';
+  position: absolute;
+  left: -36px;
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  border: 2px solid var(--bg);
+}
+
+#experience .timeline span {
+  font-size: 0.85rem;
+  color: var(--text-light);
+}
+
+#experience .timeline h3 {
+  font-size: 1.25rem;
+  margin-bottom: 8px;
+}
+
+#experience .timeline ul li {
+  position: relative;
+  padding-left: 16px;
+  margin-bottom: 4px;
+  color: var(--text-light);
+}
+
+#experience .timeline ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
+#experience .timeline ul li strong {
+  color: var(--text);
+}
+
+/* ===================== SECTION: projects ===================== */
+#projects {
+  background: var(--bg-alt);
+}
+
+#projects > .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+#projects article {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: box-shadow 0.2s ease;
+}
+
+#projects article:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+#projects article h3 {
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+#projects article > div {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+#projects article div div:nth-child(1) {
+  color: var(--text-light);
+}
+
+#projects article div p {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+#projects article a {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+/* ===================== SECTION: skills ===================== */
+#skills {
+  background: var(--bg);
+}
+
+#skills > .container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  text-align: center;
+}
+
+#skills h3 {
+  font-size: 1rem;
+  color: var(--text-light);
+  margin-bottom: 16px;
+}
+
+#skills span {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--bg-alt);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  margin: 4px;
+}
+
+/* ===================== SECTION: contact ===================== */
+#contact {
+  background: var(--text);
+  color: #fff;
+  text-align: center;
+}
+
+#contact h2 {
+  color: #fff;
+}
+
+#contact > .container > p {
+  color: #CBD5E1;
+  margin-bottom: 32px;
+}
+
+#contact > .container div {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+}
+
+#contact > .container div a {
+  display: inline-block;
+  padding: 14px 32px;
+  border-radius: var(--radius);
+  font-weight: 600;
+}
+
+#contact > .container div a:first-child {
+  background: var(--accent);
+  color: #fff;
+}
+
+#contact > .container div a:first-child:hover {
+  background: var(--accent-dark);
+}
+
+#contact > .container div a:last-child {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #475569;
+}
+
+#contact > .container div a:last-child:hover {
+  background: #475569;
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 768px) {
+  :root {
+    --section-gap: 48px;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #hero blockquote {
+    font-size: 1.25rem;
+  }
+
+  #skills h3 {
+    font-size: 1.75rem;
+  }
+
+  #skills > .container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  #skills h3 {
+    font-size: 1rem;
+  }
+
+  #projects > .container {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  section {
+    padding: 40px 0;
+  }
+
+  section h2 {
+    font-size: 1.75rem;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  #hero blockquote {
+    font-size: 1.1rem;
+  }
+
+  #impact-strip .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  #skills > .container {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
